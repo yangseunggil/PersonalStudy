@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!-- <message> -->
+<!-- <type attr="standard"> -->
+
+<!-- <item name="전체전문길이"> -->
+<!-- <length>4</length> -->
+<!-- <field>WholeMessageLength</field> -->
+<!-- </item> -->
+
+<!-- <item name="전체헤더길이"> -->
+<!-- <length>4</length> -->
+<!-- <field>WholeHeaderLength</field> -->
+<!-- </item> -->
+
+<!-- <item name="송신자"> -->
+<!-- <length>8</length> -->
+<!-- <field>Sender</field> -->
+<!-- </item> -->
+
+<!-- <item name="송신자IP"> -->
+<!-- <length>20</length> -->
+<!-- <field>SenderIP</field> -->
+<!-- </item> -->
+
+<!-- <item name="수신인원수"> -->
+<!-- <length>4</length> -->
+<!-- <field>ReceivingHeadcount</field> -->
+
+<!-- <item name="수신자"> -->
+<!-- <length>8</length> -->
+<!-- <field>Receiver</field> -->
+<!-- </item> -->
+
+<!-- <item name="수신자IP"> -->
+<!-- <length>20</length> -->
+<!-- <field>ReceiverIP</field> -->
+<!-- </item> -->
+<!-- </item> -->
+
+<!-- <item name="데이터"> -->
+<!-- <length>8</length> -->
+<!-- <field>Data</field> -->
+<!-- </item> -->
+
+<!-- </type> -->
+
+<!-- <type attr="standard222sqs"> -->
+
+<!-- </type> -->
+
+<!-- </message> -->
+
+
+<family>
+	<persons>
+		<person attr="standard">
+			<firstName>gil</firstName>
+			<lastName>hong</lastName>
+		</person>
+		<person attr="0001">
+			<firstName>who</firstName>
+			<lastName>lee</lastName>
+		</person>
+		<person attr="0002">
+			<firstName>anna</firstName>
+			<lastName>lee</lastName>
+		</person>
+	</persons>
+</family>
