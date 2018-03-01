@@ -25,7 +25,9 @@ public class SocketClient {
                 while(receiver.read(data, 0 , bufferLength) != -1){
                 	System.out.println(new String(data));
     				if(receiver.available() != 0){
-    					bufferLength=(receiver.available() / data.length != 0 ) ?  data.length : receiver.available() % bufferLength;
+    					if(receiver.available() / data.length != 0 ){
+    						bufferLength=data.length;
+    					}
     					data = new byte[bufferLength];
     				}
                 }
