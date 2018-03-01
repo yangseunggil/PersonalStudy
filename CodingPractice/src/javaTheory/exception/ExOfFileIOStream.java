@@ -102,9 +102,9 @@ public class ExOfFileIOStream {
  			 * readBuffer 변수 선언에 언급했듯이 파일의 크기만큼의 배열을 선언하기보다,
  			 * 일정 단위로 끊어내는 방식이 메모리 관리에 있어 효율적인 논리를 표현할 수 있다.
  			 */
-			while( fileInputStream.read(readBuffer) != -1){
-				System.out.println( new String(readBuffer));
-				System.out.println("=====================");
+//			while( fileInputStream.read(readBuffer) != -1){
+//				System.out.println( new String(readBuffer));
+//				System.out.println("=====================");
 				/* 01
 				 * This is an example.
 				 * So this file is meaningless.
@@ -122,7 +122,7 @@ public class ExOfFileIOStream {
 				 * =====================
 				 * 
 				*/
-			}
+//			}
 			
 			
 			/* 출력 예제 세엣.(Byte Array 오차제거)
@@ -134,14 +134,14 @@ public class ExOfFileIOStream {
 			 */
 			
 			
-//			int bufferLength = readBuffer.length;
-//			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
-//				System.out.println(new String(readBuffer));
-//				if(fileInputStream.available() != 0){
-//					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
-//					readBuffer = new byte[bufferLength];
-//				}
-//			}
+			int bufferLength = readBuffer.length;
+			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
+				System.out.println(new String(readBuffer));
+				if(fileInputStream.available() != 0){
+					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
+					readBuffer = new byte[bufferLength];
+				}
+			}
 			
 			/* =============================================== 출력예시 끄읕. =============================================== */
 			
@@ -160,7 +160,7 @@ public class ExOfFileIOStream {
 			 */
 			fileOutputStream = new FileOutputStream(copyFile);
 			
-			int bufferLength = readBuffer.length;
+//			int bufferLength = readBuffer.length;
 //			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
 				/* Buffer의 크기를 단위로 하여, 
 				 * 해당 파일에 적재한다. */
