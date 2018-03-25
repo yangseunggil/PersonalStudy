@@ -134,14 +134,14 @@ public class ExOfFileIOStream {
 			 */
 			
 			
-			int bufferLength = readBuffer.length;
-			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
-				System.out.println(new String(readBuffer));
-				if(fileInputStream.available() != 0){
-					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
-					readBuffer = new byte[bufferLength];
-				}
-			}
+//			int bufferLength = readBuffer.length;
+//			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
+//				System.out.println(new String(readBuffer));
+//				if(fileInputStream.available() != 0){
+//					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
+//					readBuffer = new byte[bufferLength];
+//				}
+//			}
 			
 			/* =============================================== 출력예시 끄읕. =============================================== */
 			
@@ -160,16 +160,16 @@ public class ExOfFileIOStream {
 			 */
 			fileOutputStream = new FileOutputStream(copyFile);
 			
-//			int bufferLength = readBuffer.length;
-//			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
+			int bufferLength = readBuffer.length;
+			while( (i = fileInputStream.read(readBuffer, 0, readBuffer.length)) != -1){
 				/* Buffer의 크기를 단위로 하여, 
 				 * 해당 파일에 적재한다. */
-//				fileOutputStream.write(readBuffer);
-//				if(fileInputStream.available() != 0){
-//					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
-//					readBuffer = new byte[bufferLength];
-//				}
-//			}
+				fileOutputStream.write(readBuffer);
+				if(fileInputStream.available() != 0){
+					bufferLength=(fileInputStream.available() / readBuffer.length != 0 ) ?  readBuffer.length : fileInputStream.available() % readBuffer.length;
+					readBuffer = new byte[bufferLength];
+				}
+			}
 			
 			/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 복사예시 끄읕. @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 

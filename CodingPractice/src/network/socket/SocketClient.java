@@ -17,20 +17,22 @@ public class SocketClient {
                 InputStream receiver = client.getInputStream();){
 
             	// 송신
-            	byte[] data = "request".getBytes();
+            	byte[] data = new byte[2];
             	sender.write(data);
             	
             	// 수신
             	int bufferLength = data.length;
-                while(receiver.read(data, 0 , bufferLength) != -1){
-                	System.out.println(new String(data));
+
+            	String string = "";
+            	while(receiver.read(data, 0 , bufferLength) != -1){
+            		string += new String(data);
     				if(receiver.available() != 0){
-    					if(receiver.available() / data.length != 0 ){
-    						bufferLength=data.length;
-    					}
     					data = new byte[bufferLength];
     				}
                 }
+            	string = string.trim();
+            	System.out.println(string);
+            	
             }catch (IOException IOE) {
             	System.err.println(IOE.getMessage());
 			}
