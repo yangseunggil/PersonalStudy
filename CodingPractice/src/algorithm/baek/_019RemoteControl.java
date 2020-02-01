@@ -4,62 +4,46 @@ import java.util.Scanner;
 
 public class _019RemoteControl{
 	public static void main(String[] args){
-		Scanner scanner = new Scanner(System.in);
-		boolean[] isBroken = new boolean[10];
-		int toChannel = scanner.nextInt();
-		int presentChannel = 100;
-		int[] brokenButton;
-		int brokenCount = scanner.nextInt();
-		brokenButton = new int[brokenCount];
+		Scanner s = new Scanner(System.in);
+		int go = s.nextInt();
+		int now = 100;
 		
-		for(int i = 0 ; i < brokenCount; i++){
-			brokenButton[i] = scanner.nextInt();
-			isBroken[brokenButton[i]] = true;
+		int brkCnt = s.nextInt();
+		int[] brkBtn = new int[brkCnt];
+		boolean[] isBrk = new boolean[10]; 
+		for(int i = 0 ; i < brkCnt ; i++) {
+			brkBtn[i] = s.nextInt();
+			isBrk[brkBtn[i]] = true;
 		}
 		
-		int inputCount = toChannel - presentChannel;
-		if(inputCount < 0 ){
-			inputCount = -inputCount;
+		int rst = go - now;
+		if(rst < 0) {
+			rst = -rst;
 		}
 		
-		for(int i = 0 ; i < 10000 ; i++ ){
-			int c = i;
-			int len = possible(c, isBroken);
-			if(len>0){
-				int press = c - toChannel;
-				if(press < 0){
-					press = -press;
+		for(int N = 0 ; N <= 500000 ; N ++) {
+			int c = N;
+			int inCnt = 0;
+			while (c > 0) {
+				if(isBrk[c%10]) {
+					inCnt = 0;
+					break;
 				}
-				if(inputCount > len + press){
-					System.out.println(inputCount + ":" + len + ":" + press);
-					inputCount = len + press;
-				}
+				inCnt++;
+				c /= 10;
 			}
 			
+			if(inCnt > 0) {
+				int tmpRst = go - N;
+				if(tmpRst < 0) {
+					tmpRst = -tmpRst;
+				}
+				tmpRst = tmpRst + inCnt;
+				if(rst > tmpRst)
+					rst = tmpRst;
+			}
 		}
-		System.out.println(inputCount);
-		
-		scanner.close();
+		System.out.println(rst);
+		s.close();
 	}
-	
-	public static int possible(int c, boolean[] isBroken){
-		if (c == 0) {
-	        if (isBroken[0]) {
-	            return 0;
-	        } else {
-	            return 1;
-	        }
-	    }
-	    int len = 0;
-	    while (c > 0) {
-	        if (isBroken[c % 10]) {
-	            return 0;
-	        }
-	        len += 1;
-	        c /= 10;
-	    }
-	    return len;
-	};
-	
-	
 }
