@@ -1,7 +1,7 @@
 package algorithm.baek;
 
 import java.util.Scanner;
-
+//https://www.acmicpc.net/problem/1476
 public class _018DayCaltulate{
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
