@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CodingPractice/library/netty-all-4.0.51.Final-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CodingPractice/library/netty-all-4.0.51.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
