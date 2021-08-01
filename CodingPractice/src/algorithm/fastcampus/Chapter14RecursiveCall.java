@@ -1,4 +1,4 @@
-package fastCampus.dataStructure;
+package algorithm.fastcampus;
 
 import java.util.ArrayList;
 
