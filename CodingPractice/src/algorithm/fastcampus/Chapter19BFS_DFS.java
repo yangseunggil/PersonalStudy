@@ -6,6 +6,12 @@ import java.util.HashMap;
 
 public class Chapter19BFS_DFS {
 
+
+    /**
+     * Breadth First Search(Queue)
+     * 방문예정이라는 Queue에 graph를 정보를 담고,
+     * 방문한 적이 없는 자료를 대상으로 방문완료 List에 담는다.
+     */
     public ArrayList<String> bfs(HashMap<String, ArrayList<String>> graph, String start){
         ArrayList<String> visited = new ArrayList<String>();
         ArrayList<String> needVisit = new ArrayList<String>();
@@ -26,6 +32,11 @@ public class Chapter19BFS_DFS {
         return visited;
     }
 
+    /**
+     * Breadth First Search(Stack)
+     * 방문예정이라는 Stack에 graph를 정보를 담고,
+     * 방문한 적이 없는 자료를 대상으로 방문완료 List에 담는다.
+     */
     public ArrayList<String> dfs(HashMap<String, ArrayList<String>> graph, String start){
         ArrayList<String> visited = new ArrayList<String>();
         ArrayList<String> needVisit = new ArrayList<String>();
